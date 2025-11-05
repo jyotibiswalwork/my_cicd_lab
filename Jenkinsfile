@@ -15,5 +15,12 @@ pipeline {
         git branch: 'main', credentialsId: 'github', url: 'https://github.com/jyotibiswalwork/my_cicd_lab.git'
       }
     }
+    stage("Build application") {
+      steps {
+        sh "mvn clean package"
+      }
+    }
+  
   }
+}
     
